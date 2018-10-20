@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Geolocation from "react-geolocation";
-import { gettingAllMeteorites } from "../store/thunks";
+import { gettingAllMeteorites, fetchTopFive } from "../store/thunks";
 
 class Main extends Component {
   constructor() {
@@ -15,7 +15,12 @@ class Main extends Component {
   componentDidMount() {
     this.props.fetchAllMeteorites();
   }
-  handleSumbit(longitude, latitude) {}
+  handleSumbit(longitude, latitude, meteors) {
+    console.log("connected to handleSubmit");
+    const top5 = this.props.fetchFive(longitude, latitude, meteors);
+    console.log("hi 2");
+    console.log(top5);
+  }
   render() {
     return (
       <React.Fragment>
@@ -36,7 +41,15 @@ class Main extends Component {
               <pre>
                 latitude: {latitude}
                 longitude: {longitude}
-                <button onClick={() => this.handleSumbit(longitude, latitude)}>
+                <button
+                  onClick={() =>
+                    this.handleSumbit(
+                      longitude,
+                      latitude,
+                      this.props.allMeteorites
+                    )
+                  }
+                >
                   Help
                 </button>
                 {console.log(this.state)}
@@ -56,7 +69,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllMeteorites: () => gettingAllMeteorites(dispatch)
+  fetchAllMeteorites: () => gettingAllMeteorites(dispatch),
+  fetchFive: (longitude, latitude, meteors) =>
+    dispatch(fetchTopFive(longitude, latitude, meteors))
 });
 
 export default connect(
