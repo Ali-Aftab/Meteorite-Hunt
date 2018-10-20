@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { Geolocation.getCurrentPosition() } from "current-location";
-// import { geolocated } from "react-geolocated";
 import Geolocation from "react-geolocation";
 import { gettingAllMeteorites } from "../store/thunks";
 
