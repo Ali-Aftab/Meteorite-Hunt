@@ -1,17 +1,16 @@
 import axios from "axios";
-import { GET_FIVE_CITIES, GET_ANY_CITY } from "./";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const getFiveCities = payload => ({
-  type: GET_FIVE_CITIES,
-  payload
-});
+// const getFiveCities = payload => ({
+//   type: GET_FIVE_CITIES,
+//   payload
+// });
 
-const getAnyCity = payload => ({
-  type: GET_ANY_CITY,
-  city: payload.city,
-  cityForecast: payload.cityForecast
-});
+// const getAnyCity = payload => ({
+//   type: GET_ANY_CITY,
+//   city: payload.city,
+//   cityForecast: payload.cityForecast
+// });
 
 export const gettingAnyCity = id => async dispatch => {
   try {
