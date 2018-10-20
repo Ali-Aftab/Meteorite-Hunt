@@ -6,9 +6,79 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #111111;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.logo-meteorite {
+  text-align: center;
+  margin: 50px auto 20px;
+  width: 100%;
+}
+
+.logo-meteorite img {
+  width: 700px;
+  height: auto;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  width: 100%;
+}
+
+.main-container {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.current-location-btn {
+  padding: 20px 50px;
+  font-size: 21px;
+  font-family: "Source Sans Pro";
+  text-transform: uppercase;
+  margin: 20px;
+  font-weight: 700;
+  background-color: #b7205d;
+  border-radius: 100px;
+  border: 3px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.long-lat-table {
+  margin: 20px auto;
+  color: white;
+  font-family: "Source Sans Pro";
+}
+
+.table-label {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.table-result {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.line {
+  height: 1px;
+  margin-top: -30px;
+  background-color: white;
+}
+
+.line-box {
+  width: 180px;
+  background-color: #111111;
+  height: 40px;
+  margin: -60px auto;
 }

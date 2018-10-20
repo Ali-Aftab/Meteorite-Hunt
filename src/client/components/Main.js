@@ -24,7 +24,7 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="home-title">Current Weather</div>
+        {/* <div className="home-title">Current Weather</div>
         <div className="main-container">Hello Temporary Text</div>
         <Geolocation
           lazy
@@ -56,7 +56,56 @@ class Main extends Component {
               </pre>
             </div>
           )}
-        />
+        /> */}
+
+        <div className="logo-meteorite">
+          <img src="logo.png" alt="Meet Your Meteorite" />
+        </div>
+        <div className="title">Find some meteorites!</div>
+        <div className="main-container">
+          <Geolocation
+            lazy
+            render={({
+              fetchingPosition,
+              position: { coords: { latitude, longitude } = {} } = {},
+              error,
+              getCurrentPosition
+            }) => (
+              <div>
+                <button
+                  className="current-location-btn"
+                  onClick={getCurrentPosition}
+                >
+                  Get Current Location
+                </button>
+                {error && <div>{error.message}</div>}
+                <pre>
+                  <table className="long-lat-table">
+                    <tbody>
+                      <tr>
+                        <td className="table-label">Latitude:</td>
+                        <td className="table-result">{latitude}</td>
+                      </tr>
+                      <tr>
+                        <td className="table-label">Longitude:</td>
+                        <td className="table-result">{longitude}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </pre>
+                <button
+                  className="current-location-btn"
+                  onClick={() => this.handleSumbit(longitude, latitude)}
+                >
+                  Go!
+                </button>
+                <div className="line">
+                  <div className="line-box" />
+                </div>
+              </div>
+            )}
+          />
+        </div>
       </React.Fragment>
     );
   }
