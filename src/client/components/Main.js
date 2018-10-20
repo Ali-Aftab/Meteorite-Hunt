@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-class Main extends Component {
+export default class Main extends Component {
   constructor() {
     super();
-    this.pageChange = this.pageChange.bind(this);
-  }
-  componentDidMount() {
-    this.props.fetchFiveCities();
-  }
-  pageChange(id) {
-    this.props.fetchAnyCity(id);
   }
   render() {
     return (
