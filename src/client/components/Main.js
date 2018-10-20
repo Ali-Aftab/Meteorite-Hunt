@@ -16,9 +16,7 @@ class Main extends Component {
     this.props.fetchAllMeteorites();
   }
   handleSumbit(longitude, latitude, meteors) {
-    console.log("connected to handleSubmit");
     const top5 = this.props.fetchFive(longitude, latitude, meteors);
-    console.log("hi 2");
     console.log(top5);
   }
   render() {
@@ -52,7 +50,6 @@ class Main extends Component {
                 >
                   Help
                 </button>
-                {console.log(this.state)}
               </pre>
             </div>
           )}
