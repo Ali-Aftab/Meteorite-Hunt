@@ -74,6 +74,7 @@ code {
   height: 1px;
   margin-top: -30px;
   background-color: white;
+  margin-bottom: 90px;
 }
 
 .line-box {
@@ -81,4 +82,60 @@ code {
   background-color: #111111;
   height: 40px;
   margin: -60px auto;
+}
+
+.card {
+  background: white;
+  width: 40%;
+  margin: 10px;
+  min-height: 80px;
+  margin: 0 auto 20px;
+  font-size: 14px;
+}
+
+.card-left {
+  float: left;
+  text-align: left;
+  padding: 20px;
+  color: #111111;
+  font-family: "Source Sans Pro";
+  vertical-align: top;
+}
+
+.card-right {
+  float: right;
+  text-align: right;
+  color: #111111;
+  font-family: "Source Sans Pro";
+  padding: 30px 20px 20px 20px;
+}
+
+.field-name {
+  text-align: left;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.field-left {
+  text-align: left;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.field-right {
+  text-align: right;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+a.google-maps {
+  color: #008ccd;
+  text-align: right;
+}
+
+.clear {
+  clear: both;
 }

@@ -2,22 +2,26 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Geolocation from "react-geolocation";
 import { gettingAllMeteorites, fetchTopFive } from "../store/thunks";
+import ResultCard from "./ResultCard";
 
 class Main extends Component {
   constructor() {
     super();
     this.state = {
-      latitude: 0,
-      longitude: 0
+      results: []
     };
     this.state.handleSumbit = this.handleSumbit.bind(this);
   }
   componentDidMount() {
     this.props.fetchAllMeteorites();
   }
-  handleSumbit(longitude, latitude, meteors) {
-    const top5 = this.props.fetchFive(longitude, latitude, meteors);
+  async handleSumbit(longitude, latitude, meteors) {
+    const top5 = await this.props.fetchFive(longitude, latitude, meteors);
     console.log(top5);
+    this.setState({
+      results: top5
+    });
+    console.log(this.state.results);
   }
   render() {
     return (
@@ -75,6 +79,38 @@ class Main extends Component {
               </div>
             )}
           />
+          {this.state.results.length
+            ? this.state.results.map(site => {
+                return (
+                  <ResultCard
+                    name={site.name}
+                    mass={site.mass}
+                    distance={site.distance}
+                    longitude={site.geolocation.longitude}
+                    latitude={site.geolocation.latitude}
+                  />
+                );
+              })
+            : null}
+          {/* <div className="card">
+            <div className="card-left">
+              <span className="field-name">Meteorite Name</span>
+              <br />
+              <span className="field-left">MASS:</span> 300000 grams
+            </div>
+            <div className="card-right">
+              <span className="field-right">DISTANCE:</span> 2.1 miles <br />
+              <a
+                className="google-maps"
+                href="http://www.google.com/maps/place/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Location
+              </a>
+            </div>
+            <div className="clear" />
+          </div> */}
         </div>
       </React.Fragment>
     );

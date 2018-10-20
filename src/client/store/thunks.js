@@ -59,7 +59,7 @@ export const fetchTopFive = (long, lat, allMeteors) => dispatch => {
         array[0] = curMet;
       }
     }
-    return array;
+    return array.reverse();
   } catch (error) {
     console.log(error);
   }
