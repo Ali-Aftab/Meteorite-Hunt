@@ -22,39 +22,6 @@ class Main extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <div className="home-title">Current Weather</div>
-        <div className="main-container">Hello Temporary Text</div>
-        <Geolocation
-          lazy
-          render={({
-            fetchingPosition,
-            position: { coords: { latitude, longitude } = {} } = {},
-            error,
-            getCurrentPosition
-          }) => (
-            <div>
-              <button onClick={getCurrentPosition}>Get Position</button>
-              {error && <div>{error.message}</div>}
-
-              <pre>
-                latitude: {latitude}
-                longitude: {longitude}
-                <button
-                  onClick={() =>
-                    this.handleSumbit(
-                      longitude,
-                      latitude,
-                      this.props.allMeteorites
-                    )
-                  }
-                >
-                  Help
-                </button>
-              </pre>
-            </div>
-          )}
-        /> */}
-
         <div className="logo-meteorite">
           <img src="logo.png" alt="Meet Your Meteorite" />
         </div>
@@ -92,7 +59,13 @@ class Main extends Component {
                 </pre>
                 <button
                   className="current-location-btn"
-                  onClick={() => this.handleSumbit(longitude, latitude)}
+                  onClick={() =>
+                    this.handleSumbit(
+                      longitude,
+                      latitude,
+                      this.props.allMeteorites
+                    )
+                  }
                 >
                   Go!
                 </button>

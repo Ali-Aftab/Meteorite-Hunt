@@ -23,6 +23,7 @@ export const gettingAllMeteorites = async dispatch => {
 };
 export const fetchTopFive = (long, lat, allMeteors) => dispatch => {
   try {
+    console.log(allMeteors);
     const currentLocation = { latitude: lat, longitude: long };
     let array = new Array(5).fill({ distance: Infinity });
     for (let i = 0; i < allMeteors.length; i++) {
