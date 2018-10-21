@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { gettingAllMeteorites, fetchTopFive } from "../store/thunks";
 import ResultCard from "./ResultCard";
+import MapContainer from "./MapContainer";
 
 class Main extends Component {
   constructor() {
@@ -70,6 +71,16 @@ class Main extends Component {
               </button>
             ) : null}
           </div>
+          {this.state.results.length ? (
+            <div className="google-maps-container">
+              <MapContainer
+                latitude={this.state.latitude}
+                longitude={this.state.longitude}
+                results={this.state.results}
+              />
+            </div>
+          ) : null}
+
           {this.state.results.length
             ? this.state.results.map((site, idx) => {
                 return (

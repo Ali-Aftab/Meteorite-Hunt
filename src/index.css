@@ -149,3 +149,10 @@ a.google-maps {
 .btn-container {
   margin-bottom: 20px;
 }
+
+.google-maps-container {
+  width: 40%;
+  height: 300px;
+  margin: 0 auto 50px;
+  position: relative;
+}
