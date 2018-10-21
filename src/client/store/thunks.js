@@ -36,7 +36,7 @@ export const fetchTopFive = (long, lat, allMeteors) => dispatch => {
         latitude: curMet.geolocation.latitude
       };
       const coordDistance = geolib.getDistance(currentLocation, coord);
-      curMet.distance = coordDistance;
+      curMet.distance = coordDistance * 0.00062137;
       if (curMet.distance < array[4].distance) {
         array[0] = array[1];
         array[1] = array[2];

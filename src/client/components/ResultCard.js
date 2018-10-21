@@ -9,8 +9,8 @@ export default function ResultCard(props) {
         <span className="field-left">MASS:</span> {props.mass} grams
       </div>
       <div className="card-right">
-        <span className="field-right">DISTANCE:</span> {props.distance} miles{" "}
-        <br />
+        <span className="field-right">DISTANCE:</span>
+        {props.distance.toFixed(2)} miles <br />
         <a
           className="google-maps"
           href={`http://www.google.com/maps/place/${props.latitude},${
