@@ -1,13 +1,9 @@
 import axios from "axios";
 import geolib from "geolib";
-import { GET_METEORITES, TOP_FIVE } from "./index";
+import { GET_METEORITES } from "./index";
 
 const allMeteorites = payload => ({
   type: GET_METEORITES,
-  payload
-});
-const topFive = payload => ({
-  type: TOP_FIVE,
   payload
 });
 

@@ -40,7 +40,8 @@ code {
   margin: 0 auto;
 }
 
-.current-location-btn {
+.current-location-btn,
+.visible {
   padding: 20px 50px;
   font-size: 21px;
   font-family: "Source Sans Pro";
@@ -107,7 +108,7 @@ code {
   text-align: right;
   color: #111111;
   font-family: "Source Sans Pro";
-  padding: 30px 20px 20px 20px;
+  padding: 20px;
 }
 
 .field-name {
@@ -138,4 +139,13 @@ a.google-maps {
 
 .clear {
   clear: both;
+}
+
+.grey {
+  background: gray;
+  cursor: default;
+}
+
+.btn-container {
+  margin-bottom: 20px;
 }

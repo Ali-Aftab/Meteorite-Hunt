@@ -4,12 +4,14 @@ export default function ResultCard(props) {
   return (
     <div className="card">
       <div className="card-left">
-        <span className="field-name">{props.name}</span>
+        <span className="field-left">METEORITE NAME:</span>
         <br />
-        <span className="field-left">MASS:</span> {props.mass} grams
+        <span className="field-name">{props.name}</span>
       </div>
       <div className="card-right">
-        <span className="field-right">DISTANCE:</span>
+        <span className="field-right">MASS:</span> {props.mass} grams
+        <br />
+        <span className="field-right">DISTANCE: </span>
         {props.distance.toFixed(2)} miles <br />
         <a
           className="google-maps"
